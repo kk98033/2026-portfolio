@@ -1,0 +1,197 @@
+:root {
+  --bg-color: #0b0c10;
+  --text-color: #c5c6c7;
+  --accent-color: #66fcf1;
+  --secondary-color: #45a29e;
+  --glass-bg: rgba(11, 12, 16, 0.7);
+  --font-main: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+/* Glitch Animation */
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px 0px var(--secondary-color), -2px -2px 0px var(--accent-color);
+    transform: translate(0);
+  }
+
+  20% {
+    text-shadow: -2px 2px 0px var(--secondary-color), 2px -2px 0px var(--accent-color);
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    text-shadow: 2px -2px 0px var(--secondary-color), -2px 2px 0px var(--accent-color);
+    transform: translate(2px, -2px);
+  }
+
+  60% {
+    text-shadow: -2px -2px 0px var(--secondary-color), 2px 2px 0px var(--accent-color);
+    transform: translate(-2px, -2px);
+  }
+
+  80% {
+    text-shadow: 2px 2px 0px var(--secondary-color), -2px -2px 0px var(--accent-color);
+    transform: translate(2px, 2px);
+  }
+
+  100% {
+    text-shadow: 2px 2px 0px var(--secondary-color), -2px -2px 0px var(--accent-color);
+    transform: translate(0);
+  }
+}
+
+.glitch-effect:hover {
+  animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+}
+
+/* Scroll Indicator Animation */
+@keyframes scrollDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) rotate(45deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0) rotate(45deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(10px) rotate(45deg);
+  }
+}
+
+.scroll-arrow {
+  animation: scrollDown 2s infinite;
+}
+
+/* Marquee Animations */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-25%);
+  }
+
+  /* Adjusted for 4 sets of items */
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.scroll-left {
+  display: flex;
+  animation: scrollLeft linear infinite;
+  will-change: transform;
+}
+
+.scroll-right {
+  display: flex;
+  animation: scrollRight linear infinite;
+  will-change: transform;
+}
+
+.skill-card:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  transform: scale(1.1);
+}
+
+.project-card:hover .card-image {
+  transform: scale(1.1);
+}
+
+/* Custom Scrollbar for Projects */
+.projects-container::-webkit-scrollbar {
+  height: 8px;
+  /* Horizontal scrollbar height */
+  display: block;
+  /* Ensure it's visible */
+}
+
+.projects-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.projects-container::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 4px;
+}
+
+.projects-container::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+/* Secret Quote Watermark */
+.secret-quote {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.03); /* Very faint */
+  z-index: 0; /* Behind content but above background */
+  pointer-events: none; /* Don't block clicks */
+  user-select: none;
+  transition: color 0.5s ease;
+}
+
+.secret-quote:hover {
+  color: rgba(255, 255, 255, 0.1); /* Slightly more visible on hover if they find it */
+}
