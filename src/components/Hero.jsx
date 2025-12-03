@@ -12,7 +12,8 @@ const Hero = () => {
             textAlign: 'center',
             color: 'var(--text-color)',
             position: 'relative',
-            zIndex: 1
+            zIndex: 1,
+            overflow: 'hidden' // 新增這行：防止飛入動畫撐開網頁導致背景被擠壓
         }}>
             {/* HUD Decorations */}
             <div style={{
@@ -52,23 +53,24 @@ const Hero = () => {
                 marginBottom: '1rem',
                 cursor: 'default',
                 lineHeight: '1',
-                perspective: '2000px', // Increased perspective for deeper 3D feel
+                perspective: '2000px',
                 fontWeight: '800',
                 fontFamily: 'var(--font-main)',
-                background: 'transparent', // Explicitly transparent
-                textShadow: 'none', // Remove container shadow
+                background: 'transparent',
+                textShadow: 'none',
+                overflow: 'visible',
             }}>
                 {["CHIA YU"].map((line, lineIndex) => (
-                    <div key={lineIndex} style={{ overflow: 'visible' }}> {/* Allow flying in from outside */}
+                    <div key={lineIndex} style={{ overflow: 'visible' }}>
                         {line.split('').map((char, charIndex) => (
                             <motion.span
                                 key={`${lineIndex}-${charIndex}`}
                                 initial={{
                                     opacity: 0,
-                                    x: (Math.random() - 0.5) * 5000, // Start from WAY OFF-SCREEN
-                                    y: (Math.random() - 0.5) * 5000, // Start from WAY OFF-SCREEN
-                                    z: 2000 + Math.random() * 1000, // Start VERY CLOSE to camera
-                                    scale: 10 + Math.random() * 10, // Start MASSIVE (pixel block look)
+                                    x: (Math.random() - 0.5) * 5000,
+                                    y: (Math.random() - 0.5) * 5000,
+                                    z: 2000 + Math.random() * 1000,
+                                    scale: 10 + Math.random() * 10,
                                     rotate: Math.random() * 360,
                                 }}
                                 animate={{
@@ -80,8 +82,8 @@ const Hero = () => {
                                     rotate: 0,
                                 }}
                                 transition={{
-                                    duration: 3, // Slow and epic
-                                    ease: [0.16, 1, 0.3, 1], // Custom ease for a "tech" snap
+                                    duration: 3,
+                                    ease: [0.16, 1, 0.3, 1],
                                     delay: Math.random() * 1.5
                                 }}
                                 style={{
@@ -91,7 +93,7 @@ const Hero = () => {
                                     fontSize: 'clamp(3rem, 8vw, 6rem)',
                                     fontWeight: '800',
                                     marginRight: char === ' ' ? '1rem' : '0',
-                                    willChange: 'transform, opacity', // Optimize performance
+                                    padding: '0.1em',
                                 }}
                             >
                                 {char}

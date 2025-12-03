@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import ImageAsciiBackground from './components/ImageAsciiBackground';
+import ThreeAsciiBackground from './components/ThreeAsciiBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="app-container">
       <div className="secret-quote">What if we just hadn't said goodbye?</div>
-      <ImageAsciiBackground />
+      <ThreeAsciiBackground />
       <Navbar />
       <BackToTop />
       <main className="content-overlay" style={{ position: 'relative', zIndex: 1 }}>
