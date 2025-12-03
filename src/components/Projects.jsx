@@ -331,6 +331,7 @@ const Projects = () => {
                 </h2>
                 <div style={{ position: 'relative' }}>
                     <button
+                        className="project-nav-btn"
                         onClick={() => {
                             scrollRef.current.scrollBy({ left: -350, behavior: 'smooth' });
                         }}
@@ -355,6 +356,13 @@ const Projects = () => {
                     >
                         &#8592;
                     </button>
+                    <style>{`
+                        @media (max-width: 768px) {
+                            .project-nav-btn {
+                                display: none !important;
+                            }
+                        }
+                    `}</style>
 
                     <div
                         className="projects-container"
@@ -387,6 +395,7 @@ const Projects = () => {
                     </div>
 
                     <button
+                        className="project-nav-btn"
                         onClick={() => {
                             scrollRef.current.scrollBy({ left: 350, behavior: 'smooth' });
                         }}

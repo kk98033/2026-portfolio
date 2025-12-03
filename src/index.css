@@ -15,6 +15,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -23,6 +25,7 @@ body {
   font-family: var(--font-main);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -178,6 +181,7 @@ a:hover {
 .projects-container::-webkit-scrollbar-thumb:hover {
   background: var(--accent-color);
 }
+
 /* Secret Quote Watermark */
 .secret-quote {
   position: fixed;
@@ -185,13 +189,17 @@ a:hover {
   right: 20px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.03); /* Very faint */
-  z-index: 0; /* Behind content but above background */
-  pointer-events: none; /* Don't block clicks */
+  color: rgba(255, 255, 255, 0.03);
+  /* Very faint */
+  z-index: 0;
+  /* Behind content but above background */
+  pointer-events: none;
+  /* Don't block clicks */
   user-select: none;
   transition: color 0.5s ease;
 }
 
 .secret-quote:hover {
-  color: rgba(255, 255, 255, 0.1); /* Slightly more visible on hover if they find it */
+  color: rgba(255, 255, 255, 0.1);
+  /* Slightly more visible on hover if they find it */
 }
