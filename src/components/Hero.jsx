@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 const Hero = () => {
     return (
         <section style={{
-            height: '100vh',
+            height: '100dvh', // Use dynamic viewport height for mobile browsers
+            minHeight: '100dvh',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -13,7 +14,9 @@ const Hero = () => {
             color: 'var(--text-color)',
             position: 'relative',
             zIndex: 1,
-            overflow: 'hidden' // 新增這行：防止飛入動畫撐開網頁導致背景被擠壓
+            overflow: 'hidden',
+            perspective: '1000px',
+            perspectiveOrigin: 'center center'
         }}>
             {/* HUD Decorations */}
             <div style={{
@@ -50,28 +53,32 @@ const Hero = () => {
                 SYSTEM ONLINE // V.2.0
             </div>
             <div className="glitch-effect" style={{
-                marginBottom: '1rem',
+                marginBottom: '0.5rem', // Reduced margin
                 cursor: 'default',
-                lineHeight: '1',
+                lineHeight: '1.1', // Slightly tighter line height
                 perspective: '2000px',
                 fontWeight: '800',
                 fontFamily: 'var(--font-main)',
                 background: 'transparent',
                 textShadow: 'none',
                 overflow: 'visible',
+                position: 'relative',
+                zIndex: 10,
+                transformStyle: 'preserve-3d'
             }}>
-                {["CHIA YU"].map((line, lineIndex) => (
-                    <div key={lineIndex} style={{ overflow: 'visible' }}>
+                {["CHIA-YU", "YANG"].map((line, lineIndex) => (
+                    <div key={lineIndex} style={{ overflow: 'visible', display: 'block' }}>
                         {line.split('').map((char, charIndex) => (
                             <motion.span
                                 key={`${lineIndex}-${charIndex}`}
                                 initial={{
                                     opacity: 0,
-                                    x: (Math.random() - 0.5) * 5000,
-                                    y: (Math.random() - 0.5) * 5000,
-                                    z: 2000 + Math.random() * 1000,
-                                    scale: 10 + Math.random() * 10,
+                                    x: (Math.random() - 0.5) * 1500,
+                                    y: (Math.random() - 0.5) * 1200,
+                                    z: 200 + Math.random() * 500,
+                                    scale: 2 + Math.random() * 2,
                                     rotate: Math.random() * 360,
+                                    textShadow: '0 0 0px rgba(102, 252, 241, 0)'
                                 }}
                                 animate={{
                                     opacity: 1,
@@ -80,20 +87,22 @@ const Hero = () => {
                                     z: 0,
                                     scale: 1,
                                     rotate: 0,
+                                    textShadow: '0 0 30px rgba(102, 252, 241, 0.2)'
                                 }}
                                 transition={{
-                                    duration: 3,
+                                    duration: 3.5,
                                     ease: [0.16, 1, 0.3, 1],
                                     delay: Math.random() * 1.5
                                 }}
                                 style={{
                                     display: 'inline-block',
                                     color: 'var(--accent-color)',
-                                    textShadow: '0 0 30px rgba(102, 252, 241, 0.2)',
-                                    fontSize: 'clamp(3rem, 8vw, 6rem)',
+                                    fontSize: 'clamp(2.5rem, 8vw, 6rem)', // Reduced min font size
                                     fontWeight: '800',
                                     marginRight: char === ' ' ? '1rem' : '0',
-                                    padding: '0.1em',
+                                    padding: '0.25em',
+                                    margin: '0 -0.05em',
+                                    willChange: 'transform, opacity, filter'
                                 }}
                             >
                                 {char}
@@ -103,53 +112,26 @@ const Hero = () => {
                 ))}
             </div>
             <p style={{
-                fontSize: 'clamp(1rem, 2vw, 1.5rem)',
-                maxWidth: '600px',
-                margin: '0 auto 2rem',
+                fontSize: 'clamp(0.9rem, 2vw, 1.5rem)', // Reduced min font size
+                maxWidth: '800px',
+                margin: '0 auto 1.5rem', // Reduced bottom margin
                 color: 'var(--secondary-color)',
-                fontWeight: '300'
+                fontWeight: '300',
+                lineHeight: '1.6', // Slightly tighter
+                padding: '0 1rem' // Add padding for small screens
             }}>
-                Building digital experiences with code and creativity.
+                What if we just hadn't said goodbye?
             </p>
-            <div style={{ marginTop: '2rem' }}>
-                <a href="#about" style={{
-                    padding: '1rem 2.5rem',
-                    fontSize: '1rem',
-                    background: 'rgba(102, 252, 241, 0.1)',
-                    border: '1px solid var(--accent-color)',
-                    color: 'var(--accent-color)',
-                    cursor: 'pointer',
-                    textDecoration: 'none',
-                    backdropFilter: 'blur(5px)',
-                    transition: 'all 0.3s ease',
-                    display: 'inline-block'
-                }}
-                    onMouseEnter={(e) => {
-                        e.target.style.background = 'var(--accent-color)';
-                        e.target.style.color = 'var(--bg-color)';
-                        e.target.style.boxShadow = '0 0 20px var(--accent-color)';
-                    }}
-                    onMouseLeave={(e) => {
-                        e.target.style.background = 'rgba(102, 252, 241, 0.1)';
-                        e.target.style.color = 'var(--accent-color)';
-                        e.target.style.boxShadow = 'none';
-                    }}
-                >
-                    Explore Work
-                </a>
-            </div>
-
             {/* Scroll Indicator */}
-            <div style={{
-                position: 'absolute',
-                bottom: '30px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                opacity: 0.7
-            }}>
+            <div
+                className="scroll-indicator-container"
+                onClick={() => {
+                    const aboutSection = document.getElementById('about');
+                    if (aboutSection) {
+                        aboutSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }}
+            >
                 <span style={{ fontSize: '0.8rem', marginBottom: '10px', letterSpacing: '0.1em' }}>SCROLL</span>
                 <div className="scroll-arrow" style={{
                     width: '15px',

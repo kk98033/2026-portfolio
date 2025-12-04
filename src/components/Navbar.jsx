@@ -37,19 +37,8 @@ const Navbar = () => {
                 [ CY ]
             </div>
             <div className="nav-links" style={{ display: 'flex', gap: '2rem' }}>
-                {['About', 'Skills', 'Timeline', 'Projects', 'Contact'].map((item) => (
-                    <a key={item} href={`#${item.toLowerCase()}`} style={{
-                        color: 'var(--text-color)',
-                        textDecoration: 'none',
-                        fontSize: '0.9rem',
-                        fontWeight: '500',
-                        opacity: 0.8,
-                        transition: 'opacity 0.3s ease'
-                    }}
-                        onMouseEnter={(e) => e.target.style.opacity = 1}
-                        onMouseLeave={(e) => e.target.style.opacity = 0.8}
-                    >
-                        <span style={{ color: 'var(--accent-color)', marginRight: '5px' }}>0{['About', 'Skills', 'Timeline', 'Projects', 'Contact'].indexOf(item) + 1}.</span>
+                {['About', 'Skills', 'Timeline', 'Research', 'Awards', 'Projects', 'Contact'].map((item) => (
+                    <a key={item} href={`#${item.toLowerCase()}`} className="nav-link-item">
                         {item}
                     </a>
                 ))}

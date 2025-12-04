@@ -3,102 +3,102 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const projects = [
     {
-        title: "AI Image Generator",
-        description: "A deep learning model that generates realistic images from text descriptions.",
-        tags: ["Python", "PyTorch", "React", "FastAPI"],
-        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=AI+Generator",
-        details: "This project leverages Generative Adversarial Networks (GANs) to create high-fidelity images. The backend is powered by FastAPI serving a PyTorch model, while the frontend provides a seamless user interface for prompt entry and gallery viewing."
+        title: "居家智能語音助理 - 小光 (Hikari)",
+        description: "整合 LLM (OpenAI Assistant) 的實體語音助理，具備自然對話與 IoT 控制能力。",
+        tags: ["ESP32", "OpenAI API", "Python", "Node-Red", "IoT"],
+        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Hikari+Assistant",
+        details: "這是一個專為日常生活設計的 AI 語音助理實體裝置。它不僅能像一般智慧音箱一樣播放音樂、設定鬧鐘，更整合了 LLM (OpenAI Assistant API) 具備自然對話能力。小光能透過語音指令控制房間燈光、回報溫濕度，甚至記錄使用者的 GPS 路徑並生成熱力圖。"
     },
     {
-        title: "E-Commerce Platform",
-        description: "Full-stack e-commerce solution with real-time inventory and secure payments.",
-        tags: ["Next.js", "Node.js", "Stripe", "MongoDB"],
+        title: "沈浸式 VR 原住民文化導覽系統",
+        description: "結合生成式 AI 與數位孿生技術的 VR 導覽系統，提供全語音自然對話體驗。",
+        tags: ["Unity", "RAG", "LlamaIndex", "Whisper", "GPT-SoVITS"],
+        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=VR+Culture+Guide",
+        details: "結合生成式 AI 與數位孿生技術的 VR 導覽系統。使用者戴上 VR 頭盔後，能進入 3D 重建的原住民虛擬教室，與 AI 虛擬導覽員進行「全語音」的自然對話。系統利用 RAG 技術讓 AI 能準確回答特定的文化知識，解決師資不足與文化傳承問題。"
+    },
+    {
+        title: "線上西洋棋對戰平台 & 論壇",
+        description: "整合即時對戰與社群交流的 Web 平台，支援即時聊天與棋局同步。",
+        tags: ["PHP", "MySQL", "Socket.io", "Bootstrap", "Chess.js"],
+        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Chess+Platform",
+        details: "這是一個整合了「即時對戰」與「社群交流」的完整 Web 平台。使用者可以在網頁上進行西洋棋配對對弈，系統支援即時聊天室與棋局同步。此外，平台還包含一個功能完整的論壇，使用者可發表 Markdown 格式的文章、攻略，並設有管理員審核與積分排行榜機制。"
+    },
+    {
+        title: "類 Terraria 橫向卷軸冒險遊戲",
+        description: "從零開發的 2D 沙盒生存遊戲，自行實作物理引擎與 Perlin Noise 地形生成。",
+        tags: ["C#", "Windows Forms", "Perlin Noise", "Game Physics"],
+        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Terraria+Clone",
+        details: "受到《Terraria》啟發，從零開始開發的 2D 沙盒生存遊戲。此專案最大的挑戰在於不使用現成遊戲引擎的物理與地圖系統，而是自行撰寫演算法。實現了基於 Perlin Noise 的隨機地形生成（包含山脈、海洋、洞窟、礦脈），以及類似 Minecraft 的「區塊 (Chunk)」動態載入系統，達成無限地圖的效能優化。"
+    },
+    {
+        title: "線上遊戲伺服器架設 (TF2)",
+        description: "利用 Ubuntu Server 架設公開遊戲伺服器，處理網路配置與自動化管理。",
+        tags: ["Linux", "Ubuntu", "Bash Script", "Network Admin"],
+        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Game+Server",
+        details: "利用報廢電腦升級硬體，安裝 Ubuntu Server 架設公開的 TF2 遊戲伺服器。處理了固定 IP 申請、Switch 防火牆設定與網路配置。在營運期間，同時在線人數達到 15 人，並累積數百名玩家。"
+    },
+    {
+        title: "CPE 解題部落格 & 個人網站",
+        description: "分享 CPE 與 UVA 解題心得的個人部落格，透過 SEO 優化幫助考生。",
+        tags: ["GCP", "Hexo", "Nginx", "SEO", "Linux"],
+        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Coding+Blog",
+        details: "為了分享 CPE (大學程式能力檢定) 與 UVA Online Judge 的解題心得而架設的個人部落格。自行租用 GCP 伺服器並架設環境，大幅修改 Hexo 模板以符合需求。透過 SEO 優化，成功讓網站在特定關鍵字搜尋中名列前茅，幫助許多同學與考生。"
+    },
+    {
+        title: "全球確診資料查詢網站",
+        description: "串接 Open API 提供即時 COVID-19 數據查詢與視覺化圖表。",
+        tags: ["HTML/CSS", "JavaScript", "RESTful API", "Chart.js"],
+        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=COVID+Dashboard",
+        details: "大一時期將高中開發的 App 移植至 Web 端的專案。網站透過串接政府與全球的 Open API，提供即時的 COVID-19 確診數據查詢。利用圖表 (圓餅圖、長條圖) 進行資料視覺化，並設計了響應式網頁 (RWD) 以支援手機瀏覽。"
+    },
+    {
+        title: "電商平台系統 (ShopGrids)",
+        description: "功能完整的電商網站，包含 Google 登入、購物車與後台管理。",
+        tags: ["PHP", "MySQL", "Apache", "OAuth 2.0", "Bootstrap"],
         image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=E-Commerce",
-        details: "Built a scalable e-commerce platform handling thousands of concurrent users. Features include real-time stock updates via WebSockets, secure payment processing with Stripe, and a comprehensive admin dashboard."
+        details: "資料庫課程的期末專案，實作了一個功能具備的電商網站。功能包含：Google 第三方快速登入、商品上架與管理（支援圖片上傳）、購物車系統、商品評分與留言機制、以及使用者個人資料管理。特別實作了 Apache Rewrite Rule 來美化 URL。"
     },
     {
-        title: "Smart Home Dashboard",
-        description: "IoT dashboard for monitoring and controlling smart home devices.",
-        tags: ["Vue.js", "Firebase", "IoT", "MQTT"],
-        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Smart+Home",
-        details: "An intuitive dashboard for managing smart home ecosystems. Integrates with various IoT protocols (MQTT, Zigbee) to provide real-time status updates and control over lights, thermostat, and security systems."
+        title: "隨機地牢探索遊戲",
+        description: "網頁版 Roguelike 遊戲，特色為演算法即時生成的隨機地圖。",
+        tags: ["Phaser 3", "TypeScript", "Webpack", "Procedural Gen"],
+        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Dungeon+Game",
+        details: "一款網頁版的 Roguelike 探索遊戲。核心特色在於「隨機性」，每次遊玩的地圖、房間構造與連接方式皆由演算法即時生成，確保玩家有不同的體驗。使用 TypeScript 開發以確保程式碼架構的嚴謹性，並透過 Webpack 進行打包部署。"
     },
     {
-        title: "Crypto Tracker",
-        description: "Real-time cryptocurrency tracker with price alerts and portfolio management.",
-        tags: ["React Native", "Redux", "CoinGecko API"],
-        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Crypto+Tracker",
-        details: "A mobile-first application for tracking cryptocurrency prices. Users can set custom alerts, manage their portfolio, and view historical data charts."
+        title: "網頁多人連線桌遊",
+        description: "利用 WebSocket 實現多人即時連線的數位化桌遊。",
+        tags: ["Phaser", "Socket.io", "Docker", "Node.js"],
+        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Multiplayer+Boardgame",
+        details: "協助教授將實體桌遊數位化。利用 WebSocket 技術實現多人即時連線功能，讓玩家能透過瀏覽器同步進行遊戲。專案最後使用 Docker 進行容器化，以便於快速部署至學校伺服器。"
     },
     {
-        title: "Task Management App",
-        description: "Collaborative task manager with real-time updates and team features.",
-        tags: ["Svelte", "Supabase", "TailwindCSS"],
-        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Task+Manager",
-        details: "Streamline team productivity with this task management tool. Features include drag-and-drop boards, real-time collaboration, and automated email notifications."
+        title: "Epidemic Sentry 疫情監控 App",
+        description: "Android App 提供全球疫情即時更新與主動推播通知。",
+        tags: ["Android", "Java/Kotlin", "Web Scraping", "Push Notification"],
+        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Epidemic+App",
+        details: "高中時期開發的 Android 應用程式，用於即時監控全球 COVID-19 疫情。App 串接 Worldometer 數據，提供各國確診與死亡數據的即時更新。最具特色的功能是「主動推播通知」，使用者可設定特定國家，當確診數有變化時，系統會主動發送手機推播或電子郵件提醒。"
     },
     {
-        title: "Fitness Tracker",
-        description: "Mobile app for tracking workouts, nutrition, and personal records.",
-        tags: ["Flutter", "Firebase", "Google Fit API"],
-        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Fitness+App",
-        details: "A comprehensive fitness companion. Users can log workouts, track calories, and visualize their progress over time with interactive charts."
+        title: "Vocabulary Master 單字背誦 App",
+        description: "功能豐富的單字學習 App，內建多種測驗模式與收藏功能。",
+        tags: ["Android", "SQLite", "Java", "Quiz Logic"],
+        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Vocab+App",
+        details: "一款功能豐富的單字學習 Android App。除了基本的單字庫瀏覽與查詢外，還實作了「星號收藏」功能。App 內建多種測驗模式，包含「Quiz Mode」（從歌詞中挖空單字進行測驗）、「Infinity Mode」以及「克漏字測驗」，幫助使用者透過不同方式記憶單字。"
     },
     {
-        title: "Weather Dashboard",
-        description: "Real-time weather forecasting with interactive maps and alerts.",
-        tags: ["React", "OpenWeatherMap", "Leaflet"],
-        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Weather+App",
-        details: "Get accurate weather forecasts for any location. Features include a dynamic map, severe weather alerts, and a 7-day forecast."
+        title: "Marisa 疫情資訊聊天機器人",
+        description: "Facebook Messenger 聊天機器人，提供疫情查詢與熱力圖回傳。",
+        tags: ["Python", "Selenium", "Messenger API", "Data Viz"],
+        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Chatbot+Marisa",
+        details: "基於 Facebook Messenger 平台的自動化聊天機器人。使用者可以直接傳送訊息查詢特定國家的疫情數據，機器人會即時回傳確診數、死亡數等統計資料。此外，它還具備爬蟲功能，能自動抓取並回傳最新的全球疫情熱力圖。"
     },
     {
-        title: "Chat Application",
-        description: "Secure messaging app with end-to-end encryption.",
-        tags: ["Socket.io", "Node.js", "Redis"],
-        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Chat+App",
-        details: "Stay connected securely. This chat app features real-time messaging, file sharing, and robust end-to-end encryption for privacy."
-    },
-    {
-        title: "Portfolio Website v1",
-        description: "My first portfolio website built with HTML, CSS, and vanilla JavaScript.",
-        tags: ["HTML", "CSS", "JavaScript"],
-        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Portfolio+v1",
-        details: "A retrospective look at my first portfolio. It showcases my early understanding of web fundamentals and responsive design."
-    },
-    {
-        title: "Recipe Finder",
-        description: "Search for recipes based on ingredients you have at home.",
-        tags: ["React", "Edamam API", "Styled Components"],
-        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Recipe+Finder",
-        details: "Don't know what to cook? Enter your available ingredients and get delicious recipe suggestions instantly."
-    },
-    {
-        title: "Budget Planner",
-        description: "Personal finance tool for tracking income and expenses.",
-        tags: ["Vue.js", "Chart.js", "Local Storage"],
-        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Budget+Planner",
-        details: "Take control of your finances. Visualize your spending habits with interactive charts and set monthly budgets."
-    },
-    {
-        title: "Markdown Editor",
-        description: "Browser-based markdown editor with live preview.",
-        tags: ["React", "Marked.js", "CodeMirror"],
-        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=MD+Editor",
-        details: "Write and preview markdown in real-time. Features include syntax highlighting, export to HTML, and local auto-save."
-    },
-    {
-        title: "Quiz App",
-        description: "Interactive quiz application with various categories and difficulty levels.",
-        tags: ["TypeScript", "React", "Open Trivia DB"],
-        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Quiz+App",
-        details: "Test your knowledge! Choose from multiple categories, track your score, and compete on the leaderboard."
-    },
-    {
-        title: "Music Player",
-        description: "Custom audio player with playlist support and visualizer.",
-        tags: ["JavaScript", "Web Audio API", "Canvas"],
-        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Music+Player",
-        details: "A sleek music player built from scratch. Features a frequency visualizer powered by the Web Audio API and HTML5 Canvas."
+        title: "Pygame 橫向卷軸射擊遊戲",
+        description: "使用 Python Pygame 開發的 2D 射擊遊戲，包含難度動態調整。",
+        tags: ["Python", "Pygame", "Game Dev"],
+        image: "https://via.placeholder.com/600x400/0b0c10/66fcf1?text=Pygame+Shooter",
+        details: "使用 Python 的 Pygame 函式庫開發的 2D 橫向卷軸射擊生存遊戲。玩家需操作角色在不斷捲動的背景中躲避障礙物並擊敗敵人。遊戲包含計分系統與生存計時，隨著時間推移，遊戲會進入「Crazy Mode」，大幅增加敵人數量與速度，考驗玩家的反應能力。"
     }
 ];
 
@@ -327,7 +327,7 @@ const Projects = () => {
                     paddingBottom: '0.5rem',
                     display: 'inline-block'
                 }}>
-                    04. Projects
+                    Projects
                 </h2>
                 <div style={{ position: 'relative' }}>
                     <button

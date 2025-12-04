@@ -90,9 +90,9 @@ a:hover {
   }
 }
 
-.glitch-effect:hover {
+/* .glitch-effect:hover {
   animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
-}
+} */
 
 /* Scroll Indicator Animation */
 @keyframes scrollDown {
@@ -202,4 +202,63 @@ a:hover {
 .secret-quote:hover {
   color: rgba(255, 255, 255, 0.1);
   /* Slightly more visible on hover if they find it */
+}
+
+/* Navbar Link Styles */
+.nav-link-item {
+  position: relative;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.nav-link-item::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 8px var(--accent-color);
+}
+
+.nav-link-item:hover {
+  color: var(--accent-color);
+  text-shadow: 0 0 8px rgba(102, 252, 241, 0.4);
+}
+
+.nav-link-item:hover::after {
+  width: 100%;
+}
+
+/* Scroll Indicator */
+.scroll-indicator-container {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.7;
+  cursor: pointer;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-indicator-container:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .scroll-indicator-container {
+    bottom: 120px;
+    /* Higher on mobile to avoid background overlap */
+  }
 }

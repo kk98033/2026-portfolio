@@ -3,27 +3,16 @@ import { motion } from 'framer-motion';
 
 const timelineData = [
     {
-        year: 'Present',
-        title: 'Graduate School',
-        description: 'Pursuing advanced studies in Computer Science, focusing on AI and Machine Learning.',
-        side: 'left'
-    },
-    {
         year: '2025',
-        title: 'University Graduation',
-        description: 'Graduated with Honors. Completed Capstone Project on Distributed Systems.',
-        side: 'right'
-    },
-    {
-        year: '2020 - 2024',
-        title: 'Awards & Milestones',
-        description: 'Won 1st Place in National Hackathon (2023). Dean\'s List for 6 consecutive semesters.',
+        title: '國立成功大學 工程科學所',
+        description: '碩士班 (Master\'s Degree)',
         side: 'left'
     },
+
     {
         year: '2020',
-        title: 'University Entrance',
-        description: 'Started journey in Computer Science. Joined the university coding club.',
+        title: '國立臺東大學 資訊工程學系',
+        description: '學士班 (Bachelor\'s Degree)',
         side: 'right'
     }
 ];

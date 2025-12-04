@@ -1,12 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ThreeAsciiBackground from './components/ThreeAsciiBackground';
+import StarBackground from './components/StarBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Timeline from './components/Timeline';
+import Research from './components/Research';
 import About from './components/About';
 import Projects from './components/Projects';
+import Awards from './components/Awards';
 import Contact from './components/Contact';
 import BackToTop from './components/BackToTop';
 import './index.css';
@@ -23,6 +26,7 @@ function App() {
     <div className="app-container">
       <div className="secret-quote">What if we just hadn't said goodbye?</div>
       <ThreeAsciiBackground />
+      <StarBackground />
       <Navbar />
       <BackToTop />
       <main className="content-overlay" style={{ position: 'relative', zIndex: 1 }}>
@@ -59,6 +63,24 @@ function App() {
           transition={{ duration: 0.8 }}
         >
           <Timeline />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <Research />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <Awards />
         </motion.div>
 
         <motion.div

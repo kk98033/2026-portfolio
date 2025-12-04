@@ -88,7 +88,7 @@ const About = () => {
                         paddingBottom: '0.5rem',
                         display: 'inline-block'
                     }}>
-                        01. About Me
+                        About Me
                     </h2>
                     <p style={{
                         fontSize: '1.1rem',
@@ -96,9 +96,7 @@ const About = () => {
                         marginBottom: '1.5rem',
                         color: '#e2e8f0'
                     }}>
-                        Hello! I'm a software engineer with a passion for building digital experiences that live on the internet.
-                        My interest in web development started back in 2020 when I decided to try editing custom Tumblr themes —
-                        turns out hacking together HTML & CSS is pretty fun!
+                        我是一名對實作與系統開發充滿熱情的開發者，畢業於國立臺東大學資訊工程學系，目前就讀於國立成功大學工程科學系碩士班。擅長將 AI (LLM)、VR 與 IoT 技術整合成完整的應用系統。從大學時期開始，我便投入大量時間研究大型語言模型、後端 API 建置、虛擬實境互動設計以及物聯網裝置操作。
                     </p>
                     <p style={{
                         fontSize: '1.1rem',
@@ -106,17 +104,14 @@ const About = () => {
                         color: '#e2e8f0',
                         marginBottom: '1.5rem'
                     }}>
-                        Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up,
-                        and a huge corporation. My main focus these days is building accessible, inclusive products and
-                        digital experiences for a variety of clients.
+                        我不滿足於理論，更喜歡動手打造真正能用的東西。從伺服器架設、資料庫配置、API 設計，到 VR 環境建置、LLM 指令控制與硬體感測，我具備獨立完成並整合為可運行系統的能力。
                     </p>
                     <p style={{
                         fontSize: '1.1rem',
                         lineHeight: '1.8',
                         color: '#e2e8f0'
                     }}>
-                        I am currently pursuing my Master's degree, diving deeper into Artificial Intelligence and
-                        Machine Learning to create smarter, more adaptive applications.
+                        我相信技術最重要的價值在於「能被使用、能解決問題」，因此在每一個專案中，我都專注於可行性、完整度與使用者體驗。
                     </p>
                 </motion.div>
             </div>
